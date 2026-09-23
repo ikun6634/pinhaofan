@@ -4,8 +4,6 @@
 #include <cmath>
 #include <iostream>
 
-// 本文件负责 Triangle 类成员函数的定义。
-// 说明：构造/析构函数中的输出仅用于观察对象的产生与消亡，正式使用时可删除。
 
 namespace {
     const double EPS = 1e-6;  // 浮点数比较允许的误差
