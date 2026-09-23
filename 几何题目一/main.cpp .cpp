@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Triangle.h"
 
-// 实验要求：类的声明（Triangle.h）、类的定义（Triangle.cpp）、
-// 对象的生成与使用（main.cpp）分放在不同文件中。
 
 int main() {
     // ---- 1. 默认构造函数 ----
