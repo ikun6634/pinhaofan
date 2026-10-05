@@ -1,50 +1,41 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 
-#include <string>
+#include <iostream>
+using namespace std;
 
-
-class Triangle {
-public:
-    Triangle();                              // (3) 默认构造函数
-    Triangle(double x, double y, double z);  // (4) 重载构造函数
-    ~Triangle();                             // 析构函数（用于观察对象生命周期）
-
-    // ---- 合法性验证 ----
-    static bool isValid(double x, double y, double z);
-    bool isValid() const;
-
-    // ---- 修改数据成员（带验证，失败返回 false，对象保持原状）----
-    bool setSides(double x, double y, double z);
-    bool setSideA(double x);
-    bool setSideB(double y);
-    bool setSideC(double z);
-
-    // ---- 获取数据成员 ----
-    double getA() const;
-    double getB() const;
-    double getC() const;
-
-    // ---- 输出 ----
-    void print() const;
-
-    // ---- 扩展功能 ----
-    double perimeter() const;      // 周长
-    double area() const;           // 面积（海伦公式）
-    bool isEquilateral() const;    // 是否等边
-    bool isIsosceles() const;      // 是否等腰
-    bool isRight() const;          // 是否直角
-    std::string typeName() const;  // 类型名称
-
-    // ---- 题库功能 ----
-    void printQuestion() const;                          // 输出题目
-    bool checkAnswer(double per, double areaVal) const;  // 判卷
-
+class Triangle
+{
+//私有成员，封装数据
 private:
-    double a, b, c;  // 三条边长
+    double a, b, c;
+    // 校验三边是否能构成三角形
+    bool isValid(double x, double y, double z);
 
-    void sortSides(double& x, double& y, double& z) const; // 三边升序排列
-    static bool nearlyEqual(double p, double q);           // 浮点数近似比较
+public:
+    // 默认构造函数
+    Triangle();
+    // 重载构造函数
+    Triangle(double x, double y, double z);
+
+    // set 修改边长
+    void setA(double x);
+    void setB(double y);
+    void setC(double z);
+
+    // get 获取边长
+    double getA();
+    double getB();
+    double getC();
+
+    // 获取周长
+    double getPerimeter();
+    // 获取面积 海伦公式
+    double getArea();
+    // 判断三角形类型
+    void showType();
+    // 输出三角形全部信息
+    void showInfo();
 };
 
-#endif // TRIANGLE_H
+#endif
